@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- @Automatically generate by Coder in 2020-07-29 10:45:22 -->
+<mapper namespace="com.taro.platform.mapper.PlatformPermMapper">
+
+  	<resultMap id="BaseResultMap" type="com.taro.platform.entity.PlatformPermEntity">
+	  	<id column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="perm_name" property="permName" jdbcType="VARCHAR" />
+  		<result column="perm_str" property="permStr" jdbcType="VARCHAR" />
+  		<result column="status" property="status" jdbcType="CHAR" />
+  		<result column="is_system" property="isSystem" jdbcType="CHAR" />
+	  	<result column="sys_flag" property="sysFlag" jdbcType="VARCHAR" />
+	  	<result column="remark" property="remark" jdbcType="VARCHAR" />
+	  	<result column="CREATOR" property="creator" jdbcType="VARCHAR" />
+	  	<result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+	  	<result column="updater" property="updater" jdbcType="VARCHAR" />
+	  	<result column="update_time" property="update_time" jdbcType="VARCHAR" />
+  	</resultMap>
+
+  	<sql id="Base_Column_List" >
+		t.id,		t.perm_name,		t.perm_str,		t.status,		t.is_system,		t.sys_flag,
+		t.remark,
+		t.creator,
+		t.create_time,
+		t.updater,
+		t.update_time
+  	</sql>
+
+  	<sql id="where_sql">
+		<if test="id != null and id != ''" >
+			and t.id = #{id, jdbcType=VARCHAR}
+		</if>
+		<if test="permName != null and permName != ''" >
+			and t.perm_name = #{permName, jdbcType=VARCHAR}
+		</if>
+		<if test="permStr != null and permStr != ''" >
+			and t.perm_str = #{permStr, jdbcType=VARCHAR}
+		</if>
+		<if test="status != null and status != ''" >
+			and t.status = #{status, jdbcType=CHAR}
+		</if>
+		<if test="isSystem != null and isSystem != ''" >
+			and t.is_system = #{isSystem, jdbcType=CHAR}
+		</if>
+		<if test="sysFlag != null and sysFlag != ''" >
+			and t.sys_flag = #{sysFlag, jdbcType=VARCHAR}
+		</if>
+		<if test="remark != null and remark != ''" >
+			and t.remark = #{remark, jdbcType=VARCHAR}
+		</if>
+		<if test="creator != null and creator != ''" >
+			and t.creator = #{creator, jdbcType=VARCHAR}
+		</if>
+		<if test="createTime != null and createTime != ''" >
+			and t.create_time = #{createTime, jdbcType=VARCHAR}
+		</if>
+		<if test="updater != null and updater != ''" >
+			and t.updater = #{updater, jdbcType=varchar}
+		</if>
+		<if test="updateTime != null and updateTime != ''" >
+			and t.update_time = #{updateTime, jdbcType=VARCHAR}
+		</if>
+  	</sql>
+
+  	<select id="selectUserPermStrList" resultType="java.lang.String" parameterType="java.lang.String">
+	   	select t.perm_str
+		from platform_perm t
+		inner join platform_module_perm_rel mp on t.id = mp.fk_perm_id
+		inner join (
+			select t.fk_module_id from platform_user_module_rel t
+			where t.fk_user_id = #{userId,jdbcType=VARCHAR}
+			union all
+			select t.fk_module_id from platform_role_module_rel t, platform_role_user_rel u
+			where t.fk_role_id = u.fk_role_id and u.fk_user_id = #{userId,jdbcType=VARCHAR}
+		) tt on mp.fk_module_id = tt.fk_module_id
+		where t.status = '1' and t.sys_flag = '1'
+  	</select>
+  	
+</mapper>
