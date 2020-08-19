@@ -49,10 +49,12 @@
 
     <modules>
         <module>platform-activiti</module>
+        <module>platform-amqp</module>
         <module>platform-auth</module>
         <module>platform-base</module>
         <module>platform-code-generate</module>
         <module>platform-common</module>
+        <module>platform-elasticsearch</module>
         <module>platform-file-manage</module>
         <module>platform-main</module>
         <module>platform-mongo</module>
@@ -76,6 +78,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+		<!--rabbitmq-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

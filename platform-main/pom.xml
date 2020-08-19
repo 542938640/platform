@@ -27,6 +27,16 @@
 			<artifactId>platform-activiti</artifactId>
 			<version>1.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.taro</groupId>
+			<artifactId>platform-auth</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.taro</groupId>
+			<artifactId>platform-file-manage</artifactId>
+			<version>1.0.1</version>
+		</dependency>
 		<!--外置tomcat启动-->
 		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
