@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- @Automatically generate by Coder in 2020-07-28 14:12:53 -->
+<mapper namespace="com.taro.platform.mapper.PlatformBaseAttrMapper">
+
+  	<resultMap id="BaseResultMap" type="com.taro.platform.entity.PlatformBaseAttrEntity">
+	  	<id column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="fk_base_id" property="fkBaseId" jdbcType="VARCHAR" />
+  		<result column="attr_name" property="attrName" jdbcType="VARCHAR" />
+  		<result column="base_id" property="baseId" jdbcType="VARCHAR" />
+  		<result column="field" property="field" jdbcType="VARCHAR" />
+  		<result column="control" property="control" jdbcType="VARCHAR" />
+  		<result column="sort" property="sort" jdbcType="INTEGER" />
+  		<result column="is_must" property="isMust" jdbcType="CHAR" />
+  		<result column="is_query" property="isQuery" jdbcType="CHAR" />
+	  	<result column="sys_flag" property="sysFlag" jdbcType="VARCHAR" />
+	  	<result column="remark" property="remark" jdbcType="VARCHAR" />
+	  	<result column="CREATOR" property="creator" jdbcType="VARCHAR" />
+	  	<result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+	  	<result column="updater" property="updater" jdbcType="VARCHAR" />
+	  	<result column="update_time" property="update_time" jdbcType="VARCHAR" />
+  	</resultMap>
+
+  	<sql id="Base_Column_List" >
+		t.id,		t.fk_base_id,		t.attr_name,		t.base_id,		t.field,		t.control,		t.sort,		t.is_must,		t.is_query,		t.sys_flag,
+		t.remark,
+		t.creator,
+		t.create_time,
+		t.updater,
+		t.update_time
+  	</sql>
+
+  	<sql id="where_sql">
+		<if test="id != null and id != ''" >
+			and t.id = #{id, jdbcType=VARCHAR}
+		</if>
+		<if test="fkBaseId != null and fkBaseId != ''" >
+			and t.fk_base_id = #{fkBaseId, jdbcType=VARCHAR}
+		</if>
+		<if test="attrName != null and attrName != ''" >
+			and t.attr_name = #{attrName, jdbcType=VARCHAR}
+		</if>
+		<if test="baseId != null and baseId != ''" >
+			and t.base_id = #{baseId, jdbcType=VARCHAR}
+		</if>
+		<if test="field != null and field != ''" >
+			and t.field = #{field, jdbcType=VARCHAR}
+		</if>
+		<if test="control != null and control != ''" >
+			and t.control = #{control, jdbcType=VARCHAR}
+		</if>
+		<if test="sort != null and sort != ''" >
+			and t.sort = #{sort, jdbcType=INTEGER}
+		</if>
+		<if test="isMust != null and isMust != ''" >
+			and t.is_must = #{isMust, jdbcType=CHAR}
+		</if>
+		<if test="isQuery != null and isQuery != ''" >
+			and t.is_query = #{isQuery, jdbcType=CHAR}
+		</if>
+		<if test="sysFlag != null and sysFlag != ''" >
+			and t.sys_flag = #{sysFlag, jdbcType=VARCHAR}
+		</if>
+		<if test="remark != null and remark != ''" >
+			and t.remark = #{remark, jdbcType=VARCHAR}
+		</if>
+		<if test="creator != null and creator != ''" >
+			and t.creator = #{creator, jdbcType=VARCHAR}
+		</if>
+		<if test="createTime != null and createTime != ''" >
+			and t.create_time = #{createTime, jdbcType=VARCHAR}
+		</if>
+		<if test="updater != null and updater != ''" >
+			and t.updater = #{updater, jdbcType=varchar}
+		</if>
+		<if test="updateTime != null and updateTime != ''" >
+			and t.update_time = #{updateTime, jdbcType=VARCHAR}
+		</if>
+  	</sql>
+
+</mapper>

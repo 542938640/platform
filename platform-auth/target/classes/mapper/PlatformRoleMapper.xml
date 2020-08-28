@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- @Automatically generate by Coder in 2020-07-29 10:45:34 -->
+<mapper namespace="com.taro.platform.mapper.PlatformRoleMapper">
+
+  	<resultMap id="BaseResultMap" type="com.taro.platform.entity.PlatformRoleEntity">
+	  	<id column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="fk_parent_id" property="fkParentId" jdbcType="INTEGER" />
+  		<result column="role_name" property="roleName" jdbcType="VARCHAR" />
+  		<result column="role_code" property="roleCode" jdbcType="VARCHAR" />
+  		<result column="role_type" property="roleType" jdbcType="VARCHAR" />
+  		<result column="status" property="status" jdbcType="CHAR" />
+  		<result column="sort" property="sort" jdbcType="INTEGER" />
+  		<result column="is_system" property="isSystem" jdbcType="CHAR" />
+  		<result column="c1" property="c1" jdbcType="VARCHAR" />
+  		<result column="c2" property="c2" jdbcType="VARCHAR" />
+  		<result column="c3" property="c3" jdbcType="VARCHAR" />
+  		<result column="c4" property="c4" jdbcType="VARCHAR" />
+  		<result column="c5" property="c5" jdbcType="VARCHAR" />
+	  	<result column="sys_flag" property="sysFlag" jdbcType="VARCHAR" />
+	  	<result column="remark" property="remark" jdbcType="VARCHAR" />
+	  	<result column="CREATOR" property="creator" jdbcType="VARCHAR" />
+	  	<result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+	  	<result column="updater" property="updater" jdbcType="VARCHAR" />
+	  	<result column="update_time" property="update_time" jdbcType="VARCHAR" />
+  	</resultMap>
+
+  	<sql id="Base_Column_List" >
+		t.id,		t.fk_parent_id,		t.role_name,		t.role_code,		t.role_type,		t.status,		t.sort,		t.is_system,		t.c1,		t.c2,		t.c3,		t.c4,		t.c5,		t.sys_flag,
+		t.remark,
+		t.creator,
+		t.create_time,
+		t.updater,
+		t.update_time
+  	</sql>
+
+  	<sql id="where_sql">
+		<if test="id != null and id != ''" >
+			and t.id = #{id, jdbcType=VARCHAR}
+		</if>
+		<if test="fkParentId != null and fkParentId != ''" >
+			and t.fk_parent_id = #{fkParentId, jdbcType=INTEGER}
+		</if>
+		<if test="roleName != null and roleName != ''" >
+			and t.role_name = #{roleName, jdbcType=VARCHAR}
+		</if>
+		<if test="roleCode != null and roleCode != ''" >
+			and t.role_code = #{roleCode, jdbcType=VARCHAR}
+		</if>
+		<if test="roleType != null and roleType != ''" >
+			and t.role_type = #{roleType, jdbcType=VARCHAR}
+		</if>
+		<if test="status != null and status != ''" >
+			and t.status = #{status, jdbcType=CHAR}
+		</if>
+		<if test="sort != null and sort != ''" >
+			and t.sort = #{sort, jdbcType=INTEGER}
+		</if>
+		<if test="isSystem != null and isSystem != ''" >
+			and t.is_system = #{isSystem, jdbcType=CHAR}
+		</if>
+		<if test="c1 != null and c1 != ''" >
+			and t.c1 = #{c1, jdbcType=VARCHAR}
+		</if>
+		<if test="c2 != null and c2 != ''" >
+			and t.c2 = #{c2, jdbcType=VARCHAR}
+		</if>
+		<if test="c3 != null and c3 != ''" >
+			and t.c3 = #{c3, jdbcType=VARCHAR}
+		</if>
+		<if test="c4 != null and c4 != ''" >
+			and t.c4 = #{c4, jdbcType=VARCHAR}
+		</if>
+		<if test="c5 != null and c5 != ''" >
+			and t.c5 = #{c5, jdbcType=VARCHAR}
+		</if>
+		<if test="sysFlag != null and sysFlag != ''" >
+			and t.sys_flag = #{sysFlag, jdbcType=VARCHAR}
+		</if>
+		<if test="remark != null and remark != ''" >
+			and t.remark = #{remark, jdbcType=VARCHAR}
+		</if>
+		<if test="creator != null and creator != ''" >
+			and t.creator = #{creator, jdbcType=VARCHAR}
+		</if>
+		<if test="createTime != null and createTime != ''" >
+			and t.create_time = #{createTime, jdbcType=VARCHAR}
+		</if>
+		<if test="updater != null and updater != ''" >
+			and t.updater = #{updater, jdbcType=varchar}
+		</if>
+		<if test="updateTime != null and updateTime != ''" >
+			and t.update_time = #{updateTime, jdbcType=VARCHAR}
+		</if>
+  	</sql>
+
+  	<select id="selectUserPage" resultType="com.taro.platform.vo.dto.UserListDTO" parameterType="java.util.map">
+	   	select t.* 
+		from platform_user t
+		left join platform_role_user_rel ru on t.id = ru.fk_user_id
+		where t.sys_flag = '1'
+		<if test="roleId != null and roleId != ''" >
+			and ru.fk_role_id = #{roleId, jdbcType=VARCHAR}
+		</if>
+  	</select>
+  	
+</mapper>

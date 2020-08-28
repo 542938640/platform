@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- @Automatically generate by Coder in 2020-07-28 14:13:20 -->
+<mapper namespace="com.taro.platform.mapper.PlatformBaseDicMapper">
+
+  	<resultMap id="BaseResultMap" type="com.taro.platform.entity.PlatformBaseDicEntity">
+	  	<id column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="fk_base_id" property="fkBaseId" jdbcType="VARCHAR" />
+  		<result column="dic_name" property="dicName" jdbcType="VARCHAR" />
+  		<result column="dic_code" property="dicCode" jdbcType="VARCHAR" />
+  		<result column="value1" property="value1" jdbcType="VARCHAR" />
+  		<result column="value2" property="value2" jdbcType="VARCHAR" />
+  		<result column="value3" property="value3" jdbcType="VARCHAR" />
+  		<result column="value4" property="value4" jdbcType="VARCHAR" />
+  		<result column="value5" property="value5" jdbcType="VARCHAR" />
+  		<result column="rel_id1" property="relId1" jdbcType="VARCHAR" />
+  		<result column="rel_id2" property="relId2" jdbcType="VARCHAR" />
+  		<result column="rel_id3" property="relId3" jdbcType="VARCHAR" />
+  		<result column="rel_id4" property="relId4" jdbcType="VARCHAR" />
+  		<result column="rel_id5" property="relId5" jdbcType="VARCHAR" />
+  		<result column="double1" property="double1" jdbcType="DECIMAL" />
+  		<result column="double2" property="double2" jdbcType="DECIMAL" />
+  		<result column="double3" property="double3" jdbcType="DECIMAL" />
+  		<result column="double4" property="double4" jdbcType="DECIMAL" />
+  		<result column="double5" property="double5" jdbcType="DECIMAL" />
+  		<result column="num1" property="num1" jdbcType="INTEGER" />
+  		<result column="num2" property="num2" jdbcType="INTEGER" />
+  		<result column="num3" property="num3" jdbcType="INTEGER" />
+  		<result column="num4" property="num4" jdbcType="INTEGER" />
+  		<result column="num5" property="num5" jdbcType="INTEGER" />
+  		<result column="status" property="status" jdbcType="CHAR" />
+  		<result column="sort" property="sort" jdbcType="INTEGER" />
+  		<result column="is_system" property="isSystem" jdbcType="CHAR" />
+	  	<result column="sys_flag" property="sysFlag" jdbcType="VARCHAR" />
+	  	<result column="remark" property="remark" jdbcType="VARCHAR" />
+	  	<result column="CREATOR" property="creator" jdbcType="VARCHAR" />
+	  	<result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+	  	<result column="updater" property="updater" jdbcType="VARCHAR" />
+	  	<result column="update_time" property="update_time" jdbcType="VARCHAR" />
+  	</resultMap>
+
+  	<sql id="Base_Column_List" >
+		t.id,		t.fk_base_id,		t.dic_name,		t.dic_code,		t.value1,		t.value2,		t.value3,		t.value4,		t.value5,		t.rel_id1,		t.rel_id2,		t.rel_id3,		t.rel_id4,		t.rel_id5,		t.double1,		t.double2,		t.double3,		t.double4,		t.double5,		t.num1,		t.num2,		t.num3,		t.num4,		t.num5,		t.status,		t.sort,		t.is_system,		t.sys_flag,
+		t.remark,
+		t.creator,
+		t.create_time,
+		t.updater,
+		t.update_time
+  	</sql>
+
+  	<sql id="where_sql">
+		<if test="id != null and id != ''" >
+			and t.id = #{id, jdbcType=VARCHAR}
+		</if>
+		<if test="fkBaseId != null and fkBaseId != ''" >
+			and t.fk_base_id = #{fkBaseId, jdbcType=VARCHAR}
+		</if>
+		<if test="dicName != null and dicName != ''" >
+			and t.dic_name = #{dicName, jdbcType=VARCHAR}
+		</if>
+		<if test="dicCode != null and dicCode != ''" >
+			and t.dic_code = #{dicCode, jdbcType=VARCHAR}
+		</if>
+		<if test="value1 != null and value1 != ''" >
+			and t.value1 = #{value1, jdbcType=VARCHAR}
+		</if>
+		<if test="value2 != null and value2 != ''" >
+			and t.value2 = #{value2, jdbcType=VARCHAR}
+		</if>
+		<if test="value3 != null and value3 != ''" >
+			and t.value3 = #{value3, jdbcType=VARCHAR}
+		</if>
+		<if test="value4 != null and value4 != ''" >
+			and t.value4 = #{value4, jdbcType=VARCHAR}
+		</if>
+		<if test="value5 != null and value5 != ''" >
+			and t.value5 = #{value5, jdbcType=VARCHAR}
+		</if>
+		<if test="relId1 != null and relId1 != ''" >
+			and t.rel_id1 = #{relId1, jdbcType=VARCHAR}
+		</if>
+		<if test="relId2 != null and relId2 != ''" >
+			and t.rel_id2 = #{relId2, jdbcType=VARCHAR}
+		</if>
+		<if test="relId3 != null and relId3 != ''" >
+			and t.rel_id3 = #{relId3, jdbcType=VARCHAR}
+		</if>
+		<if test="relId4 != null and relId4 != ''" >
+			and t.rel_id4 = #{relId4, jdbcType=VARCHAR}
+		</if>
+		<if test="relId5 != null and relId5 != ''" >
+			and t.rel_id5 = #{relId5, jdbcType=VARCHAR}
+		</if>
+		<if test="double1 != null and double1 != ''" >
+			and t.double1 = #{double1, jdbcType=DECIMAL}
+		</if>
+		<if test="double2 != null and double2 != ''" >
+			and t.double2 = #{double2, jdbcType=DECIMAL}
+		</if>
+		<if test="double3 != null and double3 != ''" >
+			and t.double3 = #{double3, jdbcType=DECIMAL}
+		</if>
+		<if test="double4 != null and double4 != ''" >
+			and t.double4 = #{double4, jdbcType=DECIMAL}
+		</if>
+		<if test="double5 != null and double5 != ''" >
+			and t.double5 = #{double5, jdbcType=DECIMAL}
+		</if>
+		<if test="num1 != null and num1 != ''" >
+			and t.num1 = #{num1, jdbcType=INTEGER}
+		</if>
+		<if test="num2 != null and num2 != ''" >
+			and t.num2 = #{num2, jdbcType=INTEGER}
+		</if>
+		<if test="num3 != null and num3 != ''" >
+			and t.num3 = #{num3, jdbcType=INTEGER}
+		</if>
+		<if test="num4 != null and num4 != ''" >
+			and t.num4 = #{num4, jdbcType=INTEGER}
+		</if>
+		<if test="num5 != null and num5 != ''" >
+			and t.num5 = #{num5, jdbcType=INTEGER}
+		</if>
+		<if test="status != null and status != ''" >
+			and t.status = #{status, jdbcType=CHAR}
+		</if>
+		<if test="sort != null and sort != ''" >
+			and t.sort = #{sort, jdbcType=INTEGER}
+		</if>
+		<if test="isSystem != null and isSystem != ''" >
+			and t.is_system = #{isSystem, jdbcType=CHAR}
+		</if>
+		<if test="sysFlag != null and sysFlag != ''" >
+			and t.sys_flag = #{sysFlag, jdbcType=VARCHAR}
+		</if>
+		<if test="remark != null and remark != ''" >
+			and t.remark = #{remark, jdbcType=VARCHAR}
+		</if>
+		<if test="creator != null and creator != ''" >
+			and t.creator = #{creator, jdbcType=VARCHAR}
+		</if>
+		<if test="createTime != null and createTime != ''" >
+			and t.create_time = #{createTime, jdbcType=VARCHAR}
+		</if>
+		<if test="updater != null and updater != ''" >
+			and t.updater = #{updater, jdbcType=varchar}
+		</if>
+		<if test="updateTime != null and updateTime != ''" >
+			and t.update_time = #{updateTime, jdbcType=VARCHAR}
+		</if>
+  	</sql>
+
+  	<select id="selectDic" resultType="com.taro.platform.vo.dto.SelectDicDTO" parameterType="map">
+	   	select t.id, t.dic_name as name, t.dic_code as code
+	    from platform_base_dic t
+	    left join platform_base b on t.fk_base_id = b.id and b.sys_flag = '1'
+	    where t.sys_flag = '1'
+		<if test="id != null and id != ''" > 
+			and b.id = #{id, jdbcType=VARCHAR}
+		</if>
+		<if test="code != null and code != ''" > 
+			and b.base_code = #{code, jdbcType=VARCHAR}
+		</if>
+		order by t.sort, t.create_time desc
+  	</select>
+  	
+</mapper>

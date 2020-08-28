@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- @Automatically generate by Coder in 2020-07-29 14:11:52 -->
+<mapper namespace="com.taro.platform.mapper.PlatformRoleMenuRelMapper">
+
+  	<resultMap id="BaseResultMap" type="com.taro.platform.entity.PlatformRoleMenuRelEntity">
+	  	<id column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="fk_role_id" property="fkRoleId" jdbcType="VARCHAR" />
+  		<result column="fk_menu_id" property="fkMenuId" jdbcType="VARCHAR" />
+  	</resultMap>
+
+  	<sql id="Base_Column_List" >
+		t.id,		t.fk_role_id,		t.fk_menu_id,
+  	</sql>
+
+  	<sql id="where_sql">
+		<if test="id != null and id != ''" >
+			and t.id = #{id, jdbcType=VARCHAR}
+		</if>
+		<if test="fkRoleId != null and fkRoleId != ''" >
+			and t.fk_role_id = #{fkRoleId, jdbcType=VARCHAR}
+		</if>
+		<if test="fkMenuId != null and fkMenuId != ''" >
+			and t.fk_menu_id = #{fkMenuId, jdbcType=VARCHAR}
+		</if>
+  	</sql>
+
+</mapper>

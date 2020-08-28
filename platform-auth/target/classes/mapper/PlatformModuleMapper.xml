@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- @Automatically generate by Coder in 2020-07-29 10:45:00 -->
+<mapper namespace="com.taro.platform.mapper.PlatformModuleMapper">
+
+  	<resultMap id="BaseResultMap" type="com.taro.platform.entity.PlatformModuleEntity">
+	  	<id column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="fk_menu_id" property="fkMenuId" jdbcType="VARCHAR" />
+  		<result column="module_name" property="moduleName" jdbcType="VARCHAR" />
+  		<result column="module_code" property="moduleCode" jdbcType="VARCHAR" />
+  		<result column="i18n" property="i18n" jdbcType="VARCHAR" />
+  		<result column="status" property="status" jdbcType="CHAR" />
+  		<result column="sort" property="sort" jdbcType="INTEGER" />
+  		<result column="is_system" property="isSystem" jdbcType="CHAR" />
+  		<result column="c1" property="c1" jdbcType="VARCHAR" />
+  		<result column="c2" property="c2" jdbcType="VARCHAR" />
+  		<result column="c3" property="c3" jdbcType="VARCHAR" />
+  		<result column="c4" property="c4" jdbcType="VARCHAR" />
+  		<result column="c5" property="c5" jdbcType="VARCHAR" />
+	  	<result column="sys_flag" property="sysFlag" jdbcType="VARCHAR" />
+	  	<result column="remark" property="remark" jdbcType="VARCHAR" />
+	  	<result column="CREATOR" property="creator" jdbcType="VARCHAR" />
+	  	<result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+	  	<result column="updater" property="updater" jdbcType="VARCHAR" />
+	  	<result column="update_time" property="update_time" jdbcType="VARCHAR" />
+  	</resultMap>
+
+  	<sql id="Base_Column_List" >
+		t.id,		t.fk_menu_id,		t.module_name,		t.module_code,		t.i18n,		t.status,		t.sort,		t.is_system,		t.c1,		t.c2,		t.c3,		t.c4,		t.c5,		t.sys_flag,
+		t.remark,
+		t.creator,
+		t.create_time,
+		t.updater,
+		t.update_time
+  	</sql>
+
+  	<sql id="where_sql">
+		<if test="id != null and id != ''" >
+			and t.id = #{id, jdbcType=VARCHAR}
+		</if>
+		<if test="fkMenuId != null and fkMenuId != ''" >
+			and t.fk_menu_id = #{fkMenuId, jdbcType=VARCHAR}
+		</if>
+		<if test="moduleName != null and moduleName != ''" >
+			and t.module_name = #{moduleName, jdbcType=VARCHAR}
+		</if>
+		<if test="moduleCode != null and moduleCode != ''" >
+			and t.module_code = #{moduleCode, jdbcType=VARCHAR}
+		</if>
+		<if test="i18n != null and i18n != ''" >
+			and t.i18n = #{i18n, jdbcType=VARCHAR}
+		</if>
+		<if test="status != null and status != ''" >
+			and t.status = #{status, jdbcType=CHAR}
+		</if>
+		<if test="sort != null and sort != ''" >
+			and t.sort = #{sort, jdbcType=INTEGER}
+		</if>
+		<if test="isSystem != null and isSystem != ''" >
+			and t.is_system = #{isSystem, jdbcType=CHAR}
+		</if>
+		<if test="c1 != null and c1 != ''" >
+			and t.c1 = #{c1, jdbcType=VARCHAR}
+		</if>
+		<if test="c2 != null and c2 != ''" >
+			and t.c2 = #{c2, jdbcType=VARCHAR}
+		</if>
+		<if test="c3 != null and c3 != ''" >
+			and t.c3 = #{c3, jdbcType=VARCHAR}
+		</if>
+		<if test="c4 != null and c4 != ''" >
+			and t.c4 = #{c4, jdbcType=VARCHAR}
+		</if>
+		<if test="c5 != null and c5 != ''" >
+			and t.c5 = #{c5, jdbcType=VARCHAR}
+		</if>
+		<if test="sysFlag != null and sysFlag != ''" >
+			and t.sys_flag = #{sysFlag, jdbcType=VARCHAR}
+		</if>
+		<if test="remark != null and remark != ''" >
+			and t.remark = #{remark, jdbcType=VARCHAR}
+		</if>
+		<if test="creator != null and creator != ''" >
+			and t.creator = #{creator, jdbcType=VARCHAR}
+		</if>
+		<if test="createTime != null and createTime != ''" >
+			and t.create_time = #{createTime, jdbcType=VARCHAR}
+		</if>
+		<if test="updater != null and updater != ''" >
+			and t.updater = #{updater, jdbcType=varchar}
+		</if>
+		<if test="updateTime != null and updateTime != ''" >
+			and t.update_time = #{updateTime, jdbcType=VARCHAR}
+		</if>
+  	</sql>
+
+</mapper>

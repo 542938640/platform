@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- @Automatically generate by Coder in 2020-08-05 09:13:33 -->
+<mapper namespace="com.taro.platform.mapper.PlatformFlowVariableMapper">
+
+  	<resultMap id="BaseResultMap" type="com.taro.platform.entity.PlatformFlowVariableEntity">
+	  	<id column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="task_id" property="taskId" jdbcType="VARCHAR" />
+  		<result column="task_name" property="taskName" jdbcType="VARCHAR" />
+  		<result column="key" property="key" jdbcType="VARCHAR" />
+  		<result column="value" property="value" jdbcType="VARCHAR" />
+  	</resultMap>
+
+  	<sql id="Base_Column_List" >
+		t.id,		t.task_id,		t.task_name,		t.key,		t.value,
+  	</sql>
+
+  	<sql id="where_sql">
+		<if test="id != null and id != ''" >
+			and t.id = #{id, jdbcType=VARCHAR}
+		</if>
+		<if test="taskId != null and taskId != ''" >
+			and t.task_id = #{taskId, jdbcType=VARCHAR}
+		</if>
+		<if test="taskName != null and taskName != ''" >
+			and t.task_name = #{taskName, jdbcType=VARCHAR}
+		</if>
+		<if test="key != null and key != ''" >
+			and t.key = #{key, jdbcType=VARCHAR}
+		</if>
+		<if test="value != null and value != ''" >
+			and t.value = #{value, jdbcType=VARCHAR}
+		</if>
+  	</sql>
+
+</mapper>

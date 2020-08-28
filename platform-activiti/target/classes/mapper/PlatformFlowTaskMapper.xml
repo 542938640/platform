@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- @Automatically generate by Coder in 2020-08-05 16:01:12 -->
+<mapper namespace="com.taro.platform.mapper.PlatformFlowTaskMapper">
+
+  	<resultMap id="BaseResultMap" type="com.taro.platform.entity.PlatformFlowTaskEntity">
+	  	<id column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="id" property="id" jdbcType="VARCHAR" />
+  		<result column="flow_key" property="flowKey" jdbcType="VARCHAR" />
+  		<result column="task_def" property="taskDef" jdbcType="VARCHAR" />
+  		<result column="task_name" property="taskName" jdbcType="VARCHAR" />
+  		<result column="role_id" property="roleId" jdbcType="VARCHAR" />
+  		<result column="role_name" property="roleName" jdbcType="VARCHAR" />
+  		<result column="user_id" property="userId" jdbcType="VARCHAR" />
+  		<result column="user_name" property="userName" jdbcType="VARCHAR" />
+  		<result column="c1" property="c1" jdbcType="VARCHAR" />
+  		<result column="c2" property="c2" jdbcType="VARCHAR" />
+  		<result column="c3" property="c3" jdbcType="VARCHAR" />
+  		<result column="c4" property="c4" jdbcType="VARCHAR" />
+  		<result column="c5" property="c5" jdbcType="VARCHAR" />
+  		<result column="remark" property="remark" jdbcType="VARCHAR" />
+  		<result column="sys_flag" property="sysFlag" jdbcType="CHAR" />
+  		<result column="creator" property="creator" jdbcType="VARCHAR" />
+  		<result column="create_time" property="createTime" jdbcType="VARCHAR" />
+  		<result column="updater" property="updater" jdbcType="VARCHAR" />
+  		<result column="update_time" property="updateTime" jdbcType="VARCHAR" />
+  	</resultMap>
+
+  	<sql id="Base_Column_List" >
+		t.id,		t.flow_key,		t.task_def,		t.task_name,		t.role_id,		t.role_name,		t.user_id,		t.user_name,		t.c1,		t.c2,		t.c3,		t.c4,		t.c5,		t.remark,		t.sys_flag,		t.creator,		t.create_time,		t.updater,		t.update_time,
+  	</sql>
+
+  	<sql id="where_sql">
+		<if test="id != null and id != ''" >
+			and t.id = #{id, jdbcType=VARCHAR}
+		</if>
+		<if test="flowKey != null and flowKey != ''" >
+			and t.flow_key = #{flowKey, jdbcType=VARCHAR}
+		</if>
+		<if test="taskDef != null and taskDef != ''" >
+			and t.task_def = #{taskDef, jdbcType=VARCHAR}
+		</if>
+		<if test="taskName != null and taskName != ''" >
+			and t.task_name = #{taskName, jdbcType=VARCHAR}
+		</if>
+		<if test="roleId != null and roleId != ''" >
+			and t.role_id = #{roleId, jdbcType=VARCHAR}
+		</if>
+		<if test="roleName != null and roleName != ''" >
+			and t.role_name = #{roleName, jdbcType=VARCHAR}
+		</if>
+		<if test="userId != null and userId != ''" >
+			and t.user_id = #{userId, jdbcType=VARCHAR}
+		</if>
+		<if test="userName != null and userName != ''" >
+			and t.user_name = #{userName, jdbcType=VARCHAR}
+		</if>
+		<if test="c1 != null and c1 != ''" >
+			and t.c1 = #{c1, jdbcType=VARCHAR}
+		</if>
+		<if test="c2 != null and c2 != ''" >
+			and t.c2 = #{c2, jdbcType=VARCHAR}
+		</if>
+		<if test="c3 != null and c3 != ''" >
+			and t.c3 = #{c3, jdbcType=VARCHAR}
+		</if>
+		<if test="c4 != null and c4 != ''" >
+			and t.c4 = #{c4, jdbcType=VARCHAR}
+		</if>
+		<if test="c5 != null and c5 != ''" >
+			and t.c5 = #{c5, jdbcType=VARCHAR}
+		</if>
+		<if test="remark != null and remark != ''" >
+			and t.remark = #{remark, jdbcType=VARCHAR}
+		</if>
+		<if test="sysFlag != null and sysFlag != ''" >
+			and t.sys_flag = #{sysFlag, jdbcType=CHAR}
+		</if>
+		<if test="creator != null and creator != ''" >
+			and t.creator = #{creator, jdbcType=VARCHAR}
+		</if>
+		<if test="createTime != null and createTime != ''" >
+			and t.create_time = #{createTime, jdbcType=VARCHAR}
+		</if>
+		<if test="updater != null and updater != ''" >
+			and t.updater = #{updater, jdbcType=VARCHAR}
+		</if>
+		<if test="updateTime != null and updateTime != ''" >
+			and t.update_time = #{updateTime, jdbcType=VARCHAR}
+		</if>
+  	</sql>
+
+</mapper>
